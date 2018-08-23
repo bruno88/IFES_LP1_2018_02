@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class Pessoa {
 	private String nome, RG, telefone, email;
-
+	
 	public Pessoa(String nome, String RG, String telefone, String email) {
 		this.nome = nome;
 		this.RG = RG;
