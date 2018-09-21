@@ -13,14 +13,14 @@ public class Ex1 {
 		telefone = JOptionPane.showInputDialog("Digite o telefone da pessoa 1");
 		email = JOptionPane.showInputDialog("Digite o email da pessoa 1");
 
-		pessoa1 = new Pessoa(nome, RG, telefone, email);
+		pessoa1 = new Pessoa(nome, RG, telefone, email, 19);
 
 		nome = JOptionPane.showInputDialog("Digite o nome da pessoa 2");
 		RG = JOptionPane.showInputDialog("Digite o RG da pessoa 2");
 		telefone = JOptionPane.showInputDialog("Digite o telefone da pessoa 2");
 		email = JOptionPane.showInputDialog("Digite o email da pessoa 2");
 
-		pessoa2 = new Pessoa(nome, RG, telefone, email);
+		pessoa2 = new Pessoa(nome, RG, telefone, email, 19);
 
 		// Consulta a dados internos
 		JOptionPane.showMessageDialog(null,

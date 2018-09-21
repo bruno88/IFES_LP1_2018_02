@@ -4,22 +4,15 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-public class Pessoa {
+public class Pessoa extends SerVivo {
 	private String nome, RG, telefone, email;
 	
-	public Pessoa(String nome, String RG, String telefone, String email) {
+	public Pessoa(String nome, String RG, String telefone, String email, int idade) {
+		super(email, idade);
 		this.nome = nome;
 		this.RG = RG;
 		this.telefone = telefone;
 		this.email = email;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public String getRG() {
@@ -48,13 +41,15 @@ public class Pessoa {
 
 	public static void inserirPessoa(ArrayList<Pessoa> pessoasCadastradas) {
 		String nome, RG, telefone, email;
+		int idade;
 
 		nome = JOptionPane.showInputDialog("Digite o nome da pessoa");
 		RG = JOptionPane.showInputDialog("Digite o RG da pessoa");
 		telefone = JOptionPane.showInputDialog("Digite o telefone da pessoa");
 		email = JOptionPane.showInputDialog("Digite o email da pessoa");
-
-		Pessoa novaPessoa = new Pessoa(nome, RG, telefone, email);
+		idade = Integer.valueOf(JOptionPane.showInputDialog("Digite a idade da pessoa"));
+		
+		Pessoa novaPessoa = new Pessoa(nome, RG, telefone, email, idade);
 
 		pessoasCadastradas.add(novaPessoa);
 
@@ -85,7 +80,7 @@ public class Pessoa {
 		String nome, saida = "";
 		nome = JOptionPane.showInputDialog("Digite o nome da pessoa a ser consultada");
 		for (Pessoa p1 : pessoasCadastradas) {
-			if (p1.getNome().equalsIgnoreCase(nome)) {
+			if (p1.nome.equalsIgnoreCase(nome)) {
 				saida += p1.toString() + "\n";
 				//return p1.toString() + "\n";
 			}
@@ -101,7 +96,7 @@ public class Pessoa {
 		Pessoa pessoaExcluida = null;
 		nome = JOptionPane.showInputDialog("Digite o nome da pessoa a ser excluída");
 		for (Pessoa p1 : pessoasCadastradas) {
-			if (p1.getNome().equalsIgnoreCase(nome)) {
+			if (p1.nome.equalsIgnoreCase(nome)) {
 				pessoaExcluida = p1;
 			}
 		}
@@ -118,7 +113,7 @@ public class Pessoa {
 
 	public static Pessoa getPessoaPorNome(ArrayList<Pessoa> lista, String nome) {
 		for (Pessoa p1 : lista) {
-			if (p1.getNome().equalsIgnoreCase(nome)) {
+			if (p1.nome.equalsIgnoreCase(nome)) {
 				return p1;
 			}
 		}
@@ -128,6 +123,11 @@ public class Pessoa {
 	@Override
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", RG=" + RG + ", telefone=" + telefone + ", email=" + email + "]";
+	}
+
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

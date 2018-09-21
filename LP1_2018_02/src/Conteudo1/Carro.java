@@ -57,9 +57,12 @@ public class Carro extends Automovel {
 	public void setVidroEletrico(boolean vidroEletrico) {
 		this.vidroEletrico = vidroEletrico;
 	}
-
-
-
+	
+	@Override
+	public void frear(double i) {
+		// TODO Auto-generated method stub
+		//super.frear(i);
+	}
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

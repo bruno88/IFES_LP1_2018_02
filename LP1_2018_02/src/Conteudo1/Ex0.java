@@ -6,20 +6,20 @@ public class Ex0 {
 	public static void main(String[] args) {
 		ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
 		Pessoa p1 = new Pessoa
-				("bruno", "123", "3333", "a@gmail.com");
+				("bruno", "123", "3333", "a@gmail.com", 19);
 		Pessoa p2 = new Pessoa
-				("pedro", "123", "3333", "a@gmail.com");
+				("pedro", "123", "3333", "a@gmail.com", 19);
 		Pessoa p3 = new Pessoa
-				("alberto", "123", "3333", "a@gmail.com");
+				("alberto", "123", "3333", "a@gmail.com", 19);
 		Pessoa p4 = new Pessoa
-				("maria", "123", "3333", "a@gmail.com");
+				("maria", "123", "3333", "a@gmail.com", 19);
 
 		pessoas.add(p2);
 		pessoas.add(p4);
 		pessoas.add(p1);
 		pessoas.add(p3);
 
-		Pessoa p5 = new Pessoa("paulo", "123", "3333", "a@gmail.com");
+		Pessoa p5 = new Pessoa("paulo", "123", "3333", "a@gmail.com", 19);
 		
 		if (pessoas.contains(p4)) {
 			System.out.println("P4 está na lista");
