@@ -10,7 +10,9 @@ public class ExemploIterator {
 	public static void main(String[] args) {
 		Pessoa pessoaAtual;
 		Iterator<?> it;
+		
 		ArrayList<Pessoa> pessoasCadastradas = new ArrayList<Pessoa>();
+		ArrayList<Carro> carros = new ArrayList<Carro>();
 		
 		// Pessoa 1
 		String nome = "bruno";
@@ -57,19 +59,30 @@ public class ExemploIterator {
 		
 		// 4 : Mostrar o uso do Iterator
 
-		it = pessoasCadastradas.iterator();
-		while (it.hasNext()) {
-			pessoaAtual = (Pessoa) it.next();
-			if (pessoaAtual.getNome() == "bruno") {
-				it.remove();
-			}
-		}
+		//it = pessoasCadastradas.iterator();
+		carros.add(new Carro("ABD-1234"));
+		carros.add(new Carro("BCD-1234"));
+		carros.add(new Carro("ERF-1234"));
+		it = carros.iterator();
+		consultaPorCriterio(it, "ERF-1234");
 
-		// No final, imprime toda a lista, para testes
+		/*// No final, imprime toda a lista, para testes
 		it = pessoasCadastradas.iterator();
 		while (it.hasNext()) {
 			JOptionPane.showMessageDialog(null, it.next());
-		}
+		}*/
 
+	}
+
+	private static void consultaPorCriterio(Iterator<?> it, String criterio) {
+		String mensagem = "Não encontrado"; 
+		while (it.hasNext()) {
+			MeuObjeto obj = (MeuObjeto) it.next();
+			if (obj.getCriterio() == criterio) {
+				mensagem =obj.toString(); 
+			}
+		}
+		System.out.println(mensagem);
+		
 	}
 }

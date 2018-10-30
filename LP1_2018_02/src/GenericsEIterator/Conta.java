@@ -1,19 +1,20 @@
 package GenericsEIterator;
 
-public class Conta {
+public class Conta extends MeuObjeto {
 	private String numero;
 	private double saldo, limite;
 	private Pessoa titular;
-	public int qtdContas = 0;
+	public static int qtdContas = 0;
 	
 	public Conta(Pessoa titular) {
-		this.qtdContas++;
+		qtdContas++;
 
 		// Nome do Títular
 		this.titular = titular;
 		
 		// Número da conta
 		this.numero = String.valueOf(qtdContas);
+		
 		// Saldo
 		this.saldo = 0;
 		// Limite
@@ -21,7 +22,7 @@ public class Conta {
 	}
 
 	public Conta(Pessoa titular, double saldo) {
-		this.qtdContas++;
+		qtdContas++;
 
 		// Nome do Títular
 		this.titular = titular;

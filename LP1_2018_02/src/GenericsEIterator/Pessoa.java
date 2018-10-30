@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-public class Pessoa {
+public class Pessoa extends MeuObjeto{
 	private String nome, RG, telefone, email;
 
 	public Pessoa(String nome, String RG, String telefone, String email) {

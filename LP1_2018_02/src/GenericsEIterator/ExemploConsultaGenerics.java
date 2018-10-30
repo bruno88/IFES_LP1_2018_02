@@ -10,8 +10,8 @@ import ExSistema.Produto;
 public class ExemploConsultaGenerics {
 
 	public static void main(String[] args) {
-		Pessoa pessoaAtual;
 		ArrayList<Pessoa> pessoasCadastradas = new ArrayList<Pessoa>();
+		ArrayList<Conta> contasCadastradas = new ArrayList<Conta>();
 
 		// Pessoa 1
 		String nome = "bruno";
@@ -36,8 +36,17 @@ public class ExemploConsultaGenerics {
 		email = "c";
 		novaPessoa = new Pessoa(nome, RG, telefone, email);
 		pessoasCadastradas.add(novaPessoa);
+		
+		
+		// Conta 1
+		Conta conta1 = new Conta(novaPessoa);
+		contasCadastradas.add(conta1);
+		Conta conta2 = new Conta(novaPessoa);
+		contasCadastradas.add(conta2);
 
-		Object obj = consultaPorCriterio(pessoasCadastradas, "maria");
+		//Object obj = consultaPorCriterio(pessoasCadastradas, "pedro");
+		
+		Object obj = consultaPorCriterio(contasCadastradas, "2");
 		if (obj != null) {
 			System.out.println(obj.toString());
 		} else {
@@ -47,7 +56,7 @@ public class ExemploConsultaGenerics {
 
 	private static Object consultaPorCriterio(ArrayList<?> 
 	lista, String criterio) {
-		Object objetoEncontrado = null;
+		Object objetoEncontrado = null, objetoRetorno = null;
 		boolean encontrado = false;
 		for (int i = 0; !encontrado && i < lista.size(); i++) {
 			objetoEncontrado = lista.get(i);
@@ -57,14 +66,14 @@ public class ExemploConsultaGenerics {
 				Conta conta = (Conta) lista.get(i);
 				if (conta.getCriterio().equalsIgnoreCase(criterio)) {
 					encontrado = true;
-					objetoEncontrado = lista.get(i);
+					objetoRetorno = lista.get(i);
 				}
 
 			} else if (objetoEncontrado instanceof Pessoa) {
 				Pessoa pessoa = (Pessoa) lista.get(i);
 				if (pessoa.getCriterio().equalsIgnoreCase(criterio)) {
 					encontrado = true;
-					objetoEncontrado = lista.get(i);
+					objetoRetorno = lista.get(i);
 				}
 			}
 			else {
@@ -73,6 +82,6 @@ public class ExemploConsultaGenerics {
 
 		}
 
-		return objetoEncontrado;
+		return objetoRetorno;
 	}
 }
