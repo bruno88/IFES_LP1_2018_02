@@ -1,0 +1,2 @@
+Pessoa [nome=Ana, RG=123, telefone=1111, email=a@b.c]
+Pessoa [nome=Bruno, RG=123, telefone=1111, email=a@b.c]

@@ -5,6 +5,8 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import Interfaces.IWritable;
+
 public class ExemploIterator2 {
 
 	public static void main(String[] args) {
@@ -42,6 +44,7 @@ public class ExemploIterator2 {
 		contasCadastradas.add(c1);
 
 		it = pessoasCadastradas.iterator();
+		// TODO: bagunçar pessoasCadastradas 
 		removePorNome(it, "bruno");
 
 		it = contasCadastradas.iterator();
@@ -49,15 +52,28 @@ public class ExemploIterator2 {
 
 		// No final, imprime toda a lista, para testes
 		it = pessoasCadastradas.iterator();
-
+		
+		// reconhecendo classes em tempo de execução
+		reconheceTipoClasse(Conta.class);
+/*
+		// imprimindo tudo
 		JOptionPane.showMessageDialog(null, "Imprimindo Pessoas");
 		imprimirTudo(it);
 		it = contasCadastradas.iterator();
 		JOptionPane.showMessageDialog(null, "Imprimindo Contas");
-		imprimirTudo(it);
-
+		imprimirTudo(it);*/
 	}
 
+	public static void reconheceTipoClasse ( 
+			Class<?> tipo) {
+		if (tipo == Conta.class) {
+			System.out.println("Conta");
+		} else if (tipo == Pessoa.class) {
+			System.out.println("Pessoa");
+		} else {
+			System.out.println("Outra coisa");
+		}
+	}
 	// Usando Generics para imprimir tudo
 	public static void imprimirTudo(Iterator<?> iterator) {
 		while (iterator.hasNext()) {

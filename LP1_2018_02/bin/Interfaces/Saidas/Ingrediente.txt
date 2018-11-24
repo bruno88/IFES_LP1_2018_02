@@ -1,0 +1,4 @@
+Ingrediente [nome=Canela, gosto=doce]
+Ingrediente [nome=Sal, gosto=salgado]
+Ingrediente [nome=Limão, gosto=azedo]
+Ingrediente [nome=Pimenta, gosto=apimentado]

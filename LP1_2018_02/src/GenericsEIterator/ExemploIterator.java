@@ -65,12 +65,18 @@ public class ExemploIterator {
 		carros.add(new Carro("ERF-1234"));
 		it = carros.iterator();
 		consultaPorCriterio(it, "ERF-1234");
+		
+		it = pessoasCadastradas.iterator();
+		consultaPorCriterio(it, "bruno");
+		
+		it = pessoasCadastradas.iterator();
+		consultaPorCriterio(it, "malucão");
 
-		/*// No final, imprime toda a lista, para testes
+		// No final, imprime toda a lista, para testes
 		it = pessoasCadastradas.iterator();
 		while (it.hasNext()) {
 			JOptionPane.showMessageDialog(null, it.next());
-		}*/
+		}
 
 	}
 

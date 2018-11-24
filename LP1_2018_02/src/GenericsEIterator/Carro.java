@@ -10,5 +10,11 @@ public class Carro extends MeuObjeto {
 	public String getCriterio() {
 		return this.placa;
 	}
+	@Override
+	public String toString() {
+		return "Carro (" + placa + ")";
+	}
+	
+	
 
 }
