@@ -6,7 +6,8 @@ import java.util.LinkedList;
 
 import javax.swing.JComponent;
 
-public class LinesComponent extends JComponent /*implements IDesenhavel*/ {
+public class LinesComponent extends JComponent
+/*implements IDesenhavel*/ {
 
 	private static class Line {
 		final int x1;

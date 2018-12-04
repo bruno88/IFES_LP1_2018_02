@@ -7,7 +7,8 @@ public enum MinhaCor {
 	ROSA(4), 
 	MARROM(5),
 	PRETO (6),
-	OCRE (7);
+	OCRE (7),
+	CASTANHO(8);
 
 	public int valorEnum;
 
